@@ -180,14 +180,14 @@ class ArloCam(Camera):
         base_stations[0].update()
         self._camera.update()
 
-        battery_level = self.clean_attr(self._camera.get_battery_level)
-        brightness = self.clean_attr(self._camera.get_brightness)
-        flip_state = self.clean_attr(self._camera.get_flip_state)
-        mirror_state = self.clean_attr(self._camera.get_mirror_state)
+        battery_level = self.clean_attr(self._camera.battery_level)
+        brightness = self.clean_attr(self._camera.brightness)
+        flip_state = self.clean_attr(self._camera.flip_state)
+        mirror_state = self.clean_attr(self._camera.mirror_state)
         motion_sensitivity = self.clean_attr(
-            self._camera.get_motion_detection_sensitivity)
-        powersave_mode = self.clean_attr(self._camera.get_powersave_mode)
-        signal_strength = self.clean_attr(self._camera.get_signal_strength)
+            self._camera.motion_detection_sensitivity)
+        powersave_mode = self.clean_attr(self._camera.powersave_mode)
+        signal_strength = self.clean_attr(self._camera.signal_strength)
         unseen_videos = self.clean_attr(self._camera.unseen_videos)
 
         self.attrs[ATTR_BATTERY_LEVEL] = battery_level
